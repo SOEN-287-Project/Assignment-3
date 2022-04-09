@@ -1,0 +1,541 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  /*background-image: url("../images/background/haikei_background.svg");    /* 262833 and 00101C */
+  color: #fffffc;
+  background-size: cover;
+}
+
+/* Navbar */
+
+.container-fluid {
+  background-color: black;
+  padding: 10px;
+}
+
+.navbar-toggler {
+  margin-right: 12px;
+}
+
+.badge_background {
+  background: transparent;
+  color: white;
+}
+
+.dropdown-item:hover {
+  background-color: #ff7f11;
+}
+
+.transparent_background {
+  background: transparent;
+}
+
+.nav_extra {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.btn-primary {
+  background-color: #ff3f00;
+  border-color: black;
+}
+
+.cart_btn {
+  margin: 3px 0px;
+  margin-top: 11px;
+  padding: 2px 12px 4px 7px;
+  position: absolute;
+  right: 75px;
+  top: 0px;
+}
+.cart_icon {
+  font-size: 24px;
+  color: #fffffc;
+}
+
+.cart_btn:hover {
+  background: #ff7f11;
+  border-color: black;
+}
+
+.cart_btn:hover .cart_icon {
+  color: white;
+}
+
+.brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin-left: 20px;
+}
+
+/* Backend */
+
+.trash_display{
+  background: transparent;
+  visibility: hidden;
+  color:rgb(39, 62, 192);
+  padding-right: 2px;
+
+}
+
+.trash_display:hover{
+  color:red;
+}
+
+
+
+.table_display:hover .trash_display{
+  visibility:visible;
+
+  
+  
+}
+
+.button_display {
+  background: transparent;
+}
+.button_display_2 {
+  background: transparent;
+}
+
+.button_display_2 {
+  color: black;
+}
+
+.button_display_2:hover {
+  color: white;
+}
+
+.button_display:hover {
+  color: white;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.select_styles {
+  font-weight: bold;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.option_color {
+  background-color: #ffffff;
+}
+
+.center_vertical {
+  line-height: 40px;
+}
+
+.center_horiz {
+  text-align: center;
+}
+
+.table_display {
+  min-height: 40px;
+  /*background-image: url("../images/background/3.svg");  */
+  background-color: #ff7f11;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px 1px rgb(209, 94, 0);
+}
+
+.order_color {
+  /*background-image: url("../images/background/2.svg");*/
+  background-color: #ff7f11;
+  color: white;
+  min-height: 40px;
+  border-radius: 5px;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px 1px rgb(209, 94, 0);
+}
+
+.order_color:hover {
+  /*background-image: url("../images/background/3.svg");*/
+  background-color: #ff9d47;
+  color: black;
+}
+
+.table_display:hover {
+  /* background-image: url("../images/background/2.svg");   */
+  background-color: #ff9d47;
+  color: black;
+}
+
+.order_color:hover .button_display_2 {
+  color: white;
+}
+
+.table_display:hover .button_display {
+  color: white;
+}
+
+.color_white {
+  background-color: white;
+}
+
+.position_right {
+  float: right;
+}
+
+.margin-20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.product_div {
+  /*ackground-image: url("../images/background/haikei_background.svg");*/
+  background-color: #535353;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 17px;
+}
+
+.product_text {
+  margin-left: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.close_btn {
+  color: darkred;
+  cursor: pointer;
+  float: right;
+  margin-right: 5px;
+}
+.close_btn:hover {
+  color: darkorange;
+}
+
+.close_btn:active {
+  color: red;
+}
+
+.edit_btn {
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+}
+
+.edit_btn:hover {
+  color: darkorange;
+}
+
+.edit_btn:active {
+  color: red;
+}
+
+.add_aisle_btn {
+  margin: 30px auto;
+  border-radius: 10px;
+  border-width: 3px;
+  border-color: white;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.836);
+  font-weight: bold;
+  font-size: 12px;
+}
+.add_aisle_btn:hover {
+  background-image: url("../images/background/haikei_background.svg");
+  color: white;
+  border-color: tomato;
+}
+
+.add_product_btn {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.add_product_btn:hover {
+  color: greenyellow;
+}
+
+.add_product_btn:active {
+  color: yellow;
+}
+
+/* edit_div */
+.edit_div {
+  min-width: 50%;
+  min-height: 50%;
+  /* background-image: url("../images/background/4.svg");    262833 and 00101C */
+  background-color: rgb(78, 77, 77);
+  position: fixed;
+  top: 7%;
+  left: 5%;
+  right: 5%;
+  border-radius: 20px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+  background-size: cover;
+}
+
+.bg_edit_aisle{
+  background-color: rgb(208, 28, 94);
+  top: 8%;
+
+}
+
+.div_2_background {
+  /* background-image: url("../images/background/5.svg"); */
+  background-color: rgb(78, 77, 77);
+  background-size: cover;
+}
+
+.edit_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit_close:hover {
+  color: darkred;
+}
+
+.edit_close:active {
+  color: tomato;
+}
+
+.edit_title {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.input {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+.input_edit {
+  width: 100%;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  padding: 0px;
+  caret-color: rgb(255, 255, 255);
+  background-color: #fdc492;
+  font-weight: bold;
+  color: black;
+}
+
+.input_label {
+  position: absolute;
+  margin-left: 10px;
+  transform: translate(0.25rem, -55%) scale(0.8);
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 12.5px;
+}
+
+.margin_top_25 {
+  margin-top: 25px;
+}
+
+.save_btn {
+  margin-top: 10px;
+  font-size: 15px;
+}
+/*Style css for aisles*/
+
+.black{
+  color:black;
+  background-color: red;
+
+}
+
+.AisleSpan {
+  margin-top: 10px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  background: #2d2f31;
+  color: white;
+  font-size: 1.2em;
+  font-variant: small-caps;
+  cursor: pointer;
+  display: block;
+  font-size: 24px;
+}
+
+.AisleSpan::after {
+  float: right;
+
+}
+
+.slide {
+  margin: 0px auto;
+  clear: both;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height 0.4s ease;
+
+ 
+}
+
+.slide li {
+  padding: 0px;
+  margin: 0px auto;
+}
+
+.touch {
+  position: absolute;
+  opacity: 0;
+  height: 0px;
+}
+
+.touch:checked + .slide {
+  height: 290px;
+}
+
+.AisleProducts {
+  border: black 2.5px solid;
+  height: 250px;
+  margin: 10px;
+  color: black;
+  font-size: 2vw;
+
+}
+th,
+td {
+  border: black 2.5px solid;
+
+}
+
+td{
+    height: 200px;
+    width: 200px;
+}
+
+a{
+    text-decoration: none;
+    color: #2d2f31  ;
+}
+
+@media only screen and (max-width: 800px) {
+  .AisleProducts {
+    font-size: 3.5vw;
+  
+  }
+  
+}
+/*Banner for p1*/ 
+.hero-image {
+  background-image: linear-gradient(to right, red , orange);
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+.user{
+  color: #2d2f31;
+}
+
+/*style for cards*/
+
+.Main{
+  background-color: rgb(248, 247, 247);
+  display: grid; 
+  grid-template-rows: 1fr 10fr;
+  color: black;
+}
+
+.Main h3{
+justify-self: center;
+align-self: center;
+}
+
+.Projects{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 15px;
+  justify-content: center;
+}
+
+.Projects .card{
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 0px 5px #aaaaaa;
+  margin: 5%;
+}
+
+.food-img{
+  width: 20vh;
+  height: auto;
+
+}
+
+.food-img2{
+  height: 17vh;
+  width: auto;
+
+}
+
+
+/* .card p{
+  padding: 5px;
+}
+
+.card .title{
+  font-size: 20px;
+  font-weight: 700;
+} */

@@ -1,0 +1,49 @@
+<script src="Javascript/navbar.js"></script>
+
+<!--Website NavBar -->
+<nav class="navbar navbar-expand-sm navbar-dark nav_extra">
+    <div class="container-fluid">
+
+        <!--Grocery Store name -->
+        <a class="navbar-brand brand" href="index.html">Trader Jack's</a>
+
+        <!--Shopping Cart Icon with number of items displayed (set elementById #nb_items_cart) -->
+        <span>
+           <a href="Shopping Cart Page (P4).html"><button type="button" class="btn btn-primary cart_btn">
+                <i class="fa cart_icon">&#xf07a;</i>
+                <span class="badge badge-light badge_background" id="nb_items_cart">9</span>
+            </button></a>
+        </span>
+
+        
+        <!--Toggler button for smaller devices -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--List of items in NavBar -->
+        <div class="collapse navbar-collapse" id="navbarLinks">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false">
+                  Aisles
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                  <span id="aisles_nav"></span>
+                </ul>
+              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="backend.html">Backend</a>
+            </li>
+          </ul>
+
+        </div>
+    </div>
+
+
+</nav>

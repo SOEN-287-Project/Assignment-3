@@ -1,0 +1,116 @@
+{
+    "FruitsAndVegetables":{
+        "AisleName":"Fruits and Vegetables",
+        "AisleDisplay":"<i class=\"fas fa-apple-alt\"></i>Fruits and Vegetables<i class=\"fas fa-carrot\"></i>",
+        "Apple":{
+            "Price" : 1.99,
+            "Description": "Organic Apple, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Apple.jpg"
+        },
+        "Bananas":{
+            "Price" : 0.99,
+            "Description": "Organic Banana, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Banana.png"
+        },
+        "Blueberries":{
+            "Price" : 3.99,
+            "Description": "Organic Blueberry, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Blueberries.png"
+        },
+        "Celery":{
+            "Price" : 0.25,
+            "Description": "Organic Celery, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Celery.jpg"
+        },
+        "Cherries":{
+            "Price" : 3.99,
+            "Description": "Organic Cherries, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Cherries.png"
+        },
+        "Cauliflower":{
+            "Price" : 1.99,
+            "Description": "Organic Cauliflower, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Cauliflower.png"
+        },
+        "Grapes":{
+            "Price" : 3.99,
+            "Description": "Organic Grapes, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Grapes.png"
+        },
+        "Lemons":{
+            "Price" : 0.89,
+            "Description": "Organic Lemon, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Lemons.png"
+        },
+        "Lettuce":{
+            "Price" : 2.99,
+            "Description": "Organic Lettuce, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Lettuce.png"
+        },
+        "Melon":{
+            "Price" : 0.98,
+            "Description": "Organic Melon, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Melon.png"
+        },
+        "Mangos":{
+            "Price" : 0.35,
+            "Description": "Organic Mangos, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Mango.png"
+        },
+        "Oranges":{
+            "Price" : 0.45,
+            "Description": "Organic Oranges, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Orange.png"
+        },
+        "Onions":{
+            "Price" : 0.15,
+            "Description": "Organic Onions, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Onions.png"
+        },
+        "Strawberries":{
+            "Price" : 3.99,
+            "Description": "Organic Strawberries, grown from farms of Montreal.",
+            "image": "images/Fruits and veggies/Strawberries.png"
+        }
+    },
+    "DairyProducts":{
+        "AisleName":"Dairy Products",
+        "AisleDisplay":"<i class=\"fas fa-cheese\"></i>Dairy Products",
+        "Eggs":{
+            "Price" : 0.50,
+            "Description": "Organic Eggs, grown from farms of Montreal.",
+            "image": "images/Dairy products/Eggs.png"
+        },
+        "Milk":{
+            "Price" : 0.99,
+            "Description": "Organic Milk, grown from farms of Montreal.",
+            "image": "images/Dairy products/Milk.png"
+        },
+        "Cheese":{
+            "Price" : 1.99,
+            "Description": "Organic Cheese, grown from farms of Montreal.",
+            "image": "images/Dairy products/Cheese.png"
+        }
+    },
+    "Snacks":{
+        "AisleName":"Snacks",
+        "AisleDisplay":"<i class=\"fas fa-cookie-bite\"></i>Snacks<i class=\"fas fa-candy-cane\"></i>",
+        "Doritos":{
+            "Price" : 1.99,
+            "Description": "American brand of flavored tortilla chips produced since 1964 by Frito-Lay, a wholly owned subsidiary of PepsiCo.",
+            "image": "images/Snacks/Doritos.png"
+        },
+        "Cheetos":{
+            "Price" : 1.85,
+            "Description": "Bring a cheesy, delicious crunch to snack time with a bag of CHEETOS® Crunchy Cheese-Flavored Snacks.",
+            "image": "images/Snacks/Cheetos.png"
+        },
+        "Lays":{
+            "Price" : 2.99,
+            "Description": "Made with only three ingredients. As a result, the savory potato chip flavor shines through highlighting the flavor of dips.",
+            "image": "images/Snacks/Lays.png"
+        }
+
+    }
+
+}

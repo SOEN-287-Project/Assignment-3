@@ -55,28 +55,18 @@ foodCounter1 = localStorage.getItem(`foodCounter1`);
 foodCounter2 = localStorage.getItem(`foodCounter2`); 
 
 foodCounter3 = localStorage.getItem(`foodCounter3`); 
-
  
     if((foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null)){ 
 
         document.getElementById("cart-1-quantity").value = foodCounter1; 
-
         document.getElementById("cart-2-quantity").value = foodCounter2; 
-
         document.getElementById("cart-3-quantity").value = foodCounter3; 
-
         update_input(); 
-
     } 
 
   
-
 function update_input(){  
-
-  
-
      var x = document.getElementById("cart-1-quantity").value;  
-
 
      var y = document.getElementById("cart-2-quantity").value;  
 
@@ -95,8 +85,6 @@ function update_input(){
      let quantity2 = document.getElementById("cart-2-quantity").value;  
 
       let quantity3 = document.getElementById("cart-3-quantity").value;  
-
-    // let quantity = localStorage.getItem('foodCounter');  
 
     foodCounter1 = document.getElementById("cart-1-quantity").value;  
 
@@ -120,39 +108,6 @@ function update_input(){
 
     } else {  
             history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("?quantity1")) + "?quantity1=" + foodCounter1 + "&quantity2=" + foodCounter2 + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
-    }  
-
-     if (window.location.href.indexOf("?") == -1) {  
-
-        history.replaceState("", "", window.location.href + "?quantity2=" + foodCounter2) //Updates quantity parameter in url  
-
-    } else {  
-
-        if (window.location.href.indexOf("&quantity2") != -1) {  
-
-            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity2")) + "&quantity2=" + foodCounter2) //Updates quantity parameter in url  
-
-        } else {  
-
-            history.replaceState("", "", window.location.href + "&quantity2=" + foodCounter2) //Updates quantity parameter in url  
-        }  
-    }  
-
-     if (window.location.href.indexOf("?") == -1) {  
-        history.replaceState("", "", window.location.href + "?quantity3=" + foodCounter3) //Updates quantity parameter in url  
-    } else {  
-
-        if (window.location.href.indexOf("&quantity3") != -1) {  
-
-  
-
-            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity3")) + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
-
-        } else {  
-
-            history.replaceState("", "", window.location.href + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
-
-        }  
     }  
 document.getElementById("total4").innerHTML = "$".concat(a);   
 

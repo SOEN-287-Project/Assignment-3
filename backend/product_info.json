@@ -8,12 +8,12 @@
             "image": "images/Fruits and veggies/Apple.jpg"
         },
         "Bananas":{
-            "Price" : 0.99,
+            "Price" : 1.99,
             "Description": "Organic Banana, grown from farms of Montreal.",
             "image": "images/Fruits and veggies/Banana.png"
         },
         "Blueberries":{
-            "Price" : 3.99,
+            "Price" : 1.99,
             "Description": "Organic Blueberry, grown from farms of Montreal.",
             "image": "images/Fruits and veggies/Blueberries.png"
         },

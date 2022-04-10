@@ -57,7 +57,7 @@ foodCounter2 = localStorage.getItem(`foodCounter2`);
 foodCounter3 = localStorage.getItem(`foodCounter3`); 
 
  
-    if(foodCounter1 != null && foodCounter2 != null && foodCounter3 != null){ 
+    if((foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null)){ 
 
         document.getElementById("cart-1-quantity").value = foodCounter1; 
 

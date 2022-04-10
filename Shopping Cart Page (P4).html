@@ -49,6 +49,37 @@
         $("#navbar").load("Components/navbar.html");
     });
 </script>
+
+<body>
+    <div id="navbar"></div>
+    <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>
+
+        <ul class="list">
+
+            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "update_input()"><button class="add">Add</button>  <button class="remove">remove</button></li>
+            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+
+        </ul>
+
+
+    </div>
+    </div>
+
+    <div class="container2"> <div class="box2"> <h4>Cart Summary</h4> 
+                             <h5>Subtotal: </h5>
+                             <h5 class="price"><span id="total4">$0.00</span></h5>
+                             <h5>QST: </h5>
+                             <h5 class="price"><span id="total5">$0.00</span></h5>
+                             <h5>GST: </h5>
+                             <h5 class="price"><span id="total6">$0.00</span></h5>
+                             <h2>Estimated Total: </h2>
+                             <h5 class="price"><span id="total7">$0.00</span></h5></div></div>
+
+    <div class="continue_shopping"> <button>Continue Shopping</button> </div>
+
+
+</body>
 <script>  
 foodCounter1 = localStorage.getItem(`foodCounter1`); 
 
@@ -118,37 +149,4 @@ document.getElementById("total5").innerHTML = "$".concat(b);
 document.getElementById("total6").innerHTML = "$".concat(c);  
 }  
 </script>  
-
-    
-
-<body>
-    <div id="navbar"></div>
-    <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>
-
-        <ul class="list">
-
-            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
-            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "update_input()"><button class="add">Add</button>  <button class="remove">remove</button></li>
-            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
-
-        </ul>
-
-
-    </div>
-    </div>
-
-    <div class="container2"> <div class="box2"> <h4>Cart Summary</h4> 
-                             <h5>Subtotal: </h5>
-                             <h5 class="price"><span id="total4">$0.00</span></h5>
-                             <h5>QST: </h5>
-                             <h5 class="price"><span id="total5">$0.00</span></h5>
-                             <h5>GST: </h5>
-                             <h5 class="price"><span id="total6">$0.00</span></h5>
-                             <h2>Estimated Total: </h2>
-                             <h5 class="price"><span id="total7">$0.00</span></h5></div></div>
-
-    <div class="continue_shopping"> <button>Continue Shopping</button> </div>
-
-
-</body>
 </html>

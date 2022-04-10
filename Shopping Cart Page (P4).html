@@ -49,24 +49,120 @@
         $("#navbar").load("Components/navbar.html");
     });
 </script>
-<script>
-function read1(){
-     var x = document.getElementById("cart-1-quantity").value;
+<script>  
+foodCounter1 = localStorage.getItem(`foodCounter1`); 
+
+foodCounter2 = localStorage.getItem(`foodCounter2`); 
+
+foodCounter3 = localStorage.getItem(`foodCounter3`); 
+
  
-     var y = document.getElementById("cart-2-quantity").value;
+    if(foodCounter1 != null && foodCounter2 != null && foodCounter3 != null){ 
+
+        document.getElementById("cart-1-quantity").value = foodCounter1; 
+
+        document.getElementById("cart-2-quantity").value = foodCounter2; 
+
+        document.getElementById("cart-3-quantity").value = foodCounter3; 
+
+        update_input(); 
+
+    } 
+
+  
+
+function update_input(){  
+
+  
+
+     var x = document.getElementById("cart-1-quantity").value;  
+
+
+     var y = document.getElementById("cart-2-quantity").value;  
+
+     var z = document.getElementById("cart-3-quantity").value;  
+
+   var a = (x)*4.99 + (y)*4.99 + (z)*4.99;  
+
+  var b = a * 0.1;  
+
+  var c = a * 0.05;  
+
+  var d = a + b + c;  
+
+    let quantity1 = document.getElementById("cart-1-quantity").value;  
+
+     let quantity2 = document.getElementById("cart-2-quantity").value;  
+
+      let quantity3 = document.getElementById("cart-3-quantity").value;  
+
+    // let quantity = localStorage.getItem('foodCounter');  
+
+    foodCounter1 = document.getElementById("cart-1-quantity").value;  
+
+    foodCounter2 = document.getElementById("cart-2-quantity").value;  
+
+    foodCounter3 = document.getElementById("cart-3-quantity").value;  
+
+    localStorage.setItem(`foodCounter1`, foodCounter1);  
+
+    localStorage.setItem(`foodCounter2`, foodCounter2);  
+    localStorage.setItem(`foodCounter3`, foodCounter3);  
+    console.log(localStorage.getItem(`foodCounter1`));  
+
+    console.log(localStorage.getItem(`foodCounter2`));  
+    console.log(localStorage.getItem(`foodCounter3`));  
+
+    if (window.location.href.indexOf("?") == -1) {  
+
  
-     var z = document.getElementById("cart-3-quantity").value;
-     
-   var a = (x)*4.99 + (y)*4.99 + (z)*4.99;
-  var b = a * 0.1;
-  var c = a * 0.05;
-  var d = a + b + c;
-document.getElementById("total4").innerHTML = "$".concat(a); 
-document.getElementById("total7").innerHTML = "$".concat(d);
-document.getElementById("total5").innerHTML = "$".concat(b);
-document.getElementById("total6").innerHTML = "$".concat(c);
-}
-</script>
+        history.replaceState("", "", window.location.href + "?quantity1=" + foodCounter1  + "&quantity2=" + foodCounter2 + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
+
+    } else {  
+            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("?quantity1")) + "?quantity1=" + foodCounter1 + "&quantity2=" + foodCounter2 + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
+    }  
+
+     if (window.location.href.indexOf("?") == -1) {  
+
+        history.replaceState("", "", window.location.href + "?quantity2=" + foodCounter2) //Updates quantity parameter in url  
+
+    } else {  
+
+        if (window.location.href.indexOf("&quantity2") != -1) {  
+
+            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity2")) + "&quantity2=" + foodCounter2) //Updates quantity parameter in url  
+
+        } else {  
+
+            history.replaceState("", "", window.location.href + "&quantity2=" + foodCounter2) //Updates quantity parameter in url  
+        }  
+    }  
+
+     if (window.location.href.indexOf("?") == -1) {  
+        history.replaceState("", "", window.location.href + "?quantity3=" + foodCounter3) //Updates quantity parameter in url  
+    } else {  
+
+        if (window.location.href.indexOf("&quantity3") != -1) {  
+
+  
+
+            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity3")) + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
+
+        } else {  
+
+            history.replaceState("", "", window.location.href + "&quantity3=" + foodCounter3) //Updates quantity parameter in url  
+
+        }  
+    }  
+document.getElementById("total4").innerHTML = "$".concat(a);   
+
+document.getElementById("total7").innerHTML = "$".concat(d);  
+
+document.getElementById("total5").innerHTML = "$".concat(b);  
+
+document.getElementById("total6").innerHTML = "$".concat(c);  
+}  
+</script>  
 
     
 
@@ -76,9 +172,9 @@ document.getElementById("total6").innerHTML = "$".concat(c);
 
         <ul class="list">
 
-            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
-            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "read1()"><button class="add">Add</button>  <button class="remove">remove</button></li>
-            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "rupdate_input()"><button class="add">Add</button>  <button class="remove">remove</button></li>
+            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "update_input()"><button class="add">Add</button> <button class="remove">remove</button> </li>
 
         </ul>
 

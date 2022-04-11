@@ -153,7 +153,8 @@ async function checkIfValid(){
     usersList[email] = {"password":PassWord,
     "firstName": FirstName,
     "lastName":LastName,
-    "postalCode":PostalCode};
+    "postalCode":PostalCode,
+    "email": email};
 
 
     console.log(usersList[email]);
@@ -184,24 +185,28 @@ async function checkIfValid(){
    
 }
 
+
+//adds user to list
 function test(){
   fetch("../backend/users.json")
     .then(response => response.json())
     .then(data => {
-      document.getElementById("user_container").innerHTML = " ";
+      document.getElementById("user_container").innerHTML = "";
       for(var key in data){
         addUserToList(data[key]);
-        console.log(data[key]);
+        // console.log(data[key]);
       }
     })
 }
 
 
 function addUserToList(usersList){
-  var test_html = `<div class="container  order_color">
+  var test_html = `<div class="container  order_color" id="${usersList.email}">
   <i class="far fa-user"></i>
   ${usersList.firstName + " " + usersList.lastName}
-  <button id = "display1" class="btn position_right button_display_2" type="button">
+
+  
+  <button id = "display1" onclick="deleteUser(event)" class="btn position_right button_display_2" type="button">
       <i class="far fa-times-circle"></i>
   </button>
 
@@ -210,5 +215,28 @@ function addUserToList(usersList){
   </span>
 </div>`
 
+
 document.getElementById("user_container").innerHTML += test_html;
+}
+
+
+//delete user
+function deleteUser(event){
+
+  const parent = event.currentTarget.parentNode;
+  const user_email = parent.getAttribute('id');
+  console.log(parent.getAttribute('id'));
+
+  fetch("../backend/users.json")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("user_container").innerHTML = " ";
+      for(var key in data){
+        if(data[key].email == user_email){
+          console.log(data[key].email +" deleted!");
+          delete data[key];
+        }
+      }
+    })
+
 }

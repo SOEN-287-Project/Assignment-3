@@ -1,49 +1,17 @@
 <!-- This html is displayed when orders is selected in #selectBackend -->
-<div class="container">
-    <!-- Order ID and client username -->
-<div class="container order_color" onclick="document.getElementById('display1').click();">
-    <i class="far fa-user"></i>
-    Joe Parker
-    <button id = "display1" class="btn position_right button_display_2" type="button">
-        <i class="far fa-times-circle"></i>
-    </button>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Javascript/login_validation.js"></script>
+</head>   
 
-    <span class="btn position_right button_display_2" id = "display1" onclick="display_edit_demo_user()" type="button"  aria-expanded="false" >
-        <i class="far fa-edit"></i>
-    </span>
-</div>
+<div class="container" onclick="test()">
 
+    <div id="user_container">
 
-
-    <!-- Order ID and client username -->
-    <div class="container  order_color" onclick="document.getElementById('display2').click();">
-        <i class="far fa-user"></i>
-        John Doe
-        <button id = "display1" class="btn position_right button_display_2" type="button">
-            <i class="far fa-times-circle"></i>
-        </button>
-    
-        <span class="btn position_right button_display_2" id = "display1" onclick="display_edit_demo_user()" type="button"  aria-expanded="false" >
-            <i class="far fa-edit"></i>
-        </span>
-    
     </div>
-    
-
-        <!-- Order ID and client username -->
-        <div class="container  order_color" onclick="document.getElementById('display3').click();">
-            <i class="far fa-user"></i>
-            Alice Chan
-            <button id = "display1" class="btn position_right button_display_2" type="button">
-                <i class="far fa-times-circle"></i>
-            </button>
-        
-            <span class="btn position_right button_display_2" id = "display1" onclick="display_edit_demo_user()" type="button"  aria-expanded="false" >
-                <i class="far fa-edit"></i>
-            </span>
-        </div>
-        
-
+   
         <div class="container text-center">
             <button type="button" class="btn btn-outline-primary add_aisle_btn" onclick="display_add_demo_user()"> + Add User + </button>
             

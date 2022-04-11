@@ -156,6 +156,9 @@ async function checkIfValid(){
     "postalCode":PostalCode};
 
 
+    console.log(usersList[email]);
+
+
     $.ajax({
       type: 'POST',
       url: 'backend/signup.php',
@@ -173,9 +176,39 @@ async function checkIfValid(){
 
     });
   }else{
+    test();
     return;
   }
-
+  test();
   
    
+}
+
+function test(){
+  fetch("../backend/users.json")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("user_container").innerHTML = " ";
+      for(var key in data){
+        addUserToList(data[key]);
+        console.log(data[key]);
+      }
+    })
+}
+
+
+function addUserToList(usersList){
+  var test_html = `<div class="container  order_color">
+  <i class="far fa-user"></i>
+  ${usersList.firstName + " " + usersList.lastName}
+  <button id = "display1" class="btn position_right button_display_2" type="button">
+      <i class="far fa-times-circle"></i>
+  </button>
+
+  <span class="btn position_right button_display_2" id = "display1" onclick="display_edit_demo_user()" type="button"  aria-expanded="false" >
+      <i class="far fa-edit"></i>
+  </span>
+</div>`
+
+document.getElementById("user_container").innerHTML += test_html;
 }

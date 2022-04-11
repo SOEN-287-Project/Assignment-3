@@ -30,7 +30,7 @@
     <!--Custom Stylesheets-->
     <script src="Javascript/backend.js"></script>
     <script src="Javascript/backend.js"></script>
-
+    <script src="Javascript/login_validation.js"></script>
 
     <!--Grocery Store name -->
     <title>Trader Jack's</title>
@@ -58,7 +58,7 @@ $( window ).on( "load", function() {
   <div id="navbar"></div>
 
   <!--Select and display selected backend option-->
-  <div class="container text-center title">
+  <div class="container text-center title" onclick="test()">
     <select class= "select_styles" name="Products/Orders" id="selectBackend" onchange="check_display_backend()">
       <option class= "option_color" value="products">Products</option>
       <option class= "option_color" value="orders">Orders</option> 

@@ -26,6 +26,10 @@ function display_edit_demo_user(){
     $( "#edit_div" ).load( "backend/edit_div_users.html" );
 }
 
+function display_add_demo_user(){
+    $( "#edit_div" ).load( "./backend/add_div_users.html" );
+}
+
 function close_display_edit(){
     document.getElementById("edit_div").innerHTML = ""
 }

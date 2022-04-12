@@ -1,12 +1,18 @@
-<!-- This div is displayed when edit button under "products" items clicked  -->
-<div class="edit_div">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Javascript/login_validation.js"></script>
+</head>
 
-    <!-- Title -->
+<!-- This div is displayed when edit button under "products" items clicked  -->
+<div class="edit_div" id="edit_user_div" onload="editButton()">
+
     <div class="edit_title">
         Edit User
     </div>
 
-    <!-- Close button -->
+
     <span class= "edit_close" onclick="close_display_edit()">
         <i class="fas fa-window-close position_x fa-2x"></i>
     </span>
@@ -15,14 +21,16 @@
     <label class="input">   
         <div class="input_label">First Name</div>
 
-    <input class="input_edit" type="text" placeholder="First_Name" />
+    <input class="input_edit" type="text" name="firstname" id="firstname" placeholder="First_Name" />
+    <label id="validate4" style="color: red;visibility:hidden">Invalid</label>
     </label>
 
     <!-- User edit inputs -->
     <label class="input margin_top_25">   
     <div class="input_label">Last Name</div>
 
-    <input class="input_edit" type="text" placeholder="Last_Name" value=""/>
+    <input class="input_edit" type="text" name="lastname" id="lastname"  placeholder="Last_Name" value=""/>
+    <label id="validate5" style="color: red;visibility:hidden">Invalid</label>
     </label>
 
 
@@ -30,7 +38,8 @@
     <label class="input margin_top_25">   
         <div class="input_label">Email Address</div>
 
-    <input class="input_edit" type="text" placeholder="example@mail.com" value=""/>
+    <input class="input_edit" type="text" name="email" id="email"  placeholder="example@mail.com" value=""/>
+    <label id="validate" style="color: red;visibility:hidden">Invalid</label>
     </label>
 
 
@@ -38,22 +47,26 @@
     <label class="input margin_top_25">   
         <div class="input_label">Postal Code</div>
 
-    <input class="input_edit" type="text" placeholder="H1G 4V6" value=""/>
+    <input class="input_edit" type="text"name="postalcode" id="postalCode"  placeholder="H1G 4V6" value=""/>
+    <label id="validate3" style="color: red;visibility:hidden">Invalid</label>
     </label>
 
 
     <!-- User edit inputs -->
     <label class="input margin_top_25">   
         <div class="input_label">Gender</div>
-
-    <input class="input_edit" type="text" placeholder="M/F/Other" value=""/>
+        <select name="gender" id="gender">
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+          </select>
     </label>
 
     <!-- User edit inputs -->
     <label class="input margin_top_25">   
         <div class="input_label">Password</div>
 
-    <input class="input_edit" type="password" placeholder="Password" value=""/>
+    <input class="input_edit" type="password" name="password" id="password" placeholder="Password" value=""/>
+    <label id="validate6" style="color: red;visibility:hidden">Invalid</label>
     </label>    
 
     

@@ -38,3 +38,5 @@ function close_add_aisle(){
     document.getElementById("edit_aisle").innerHTML = ""
 
 }
+
+

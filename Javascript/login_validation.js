@@ -227,16 +227,16 @@ function deleteUser(event){
   const user_email = parent.getAttribute('id');
   console.log(parent.getAttribute('id'));
 
+
   fetch("../backend/users.json")
     .then(response => response.json())
     .then(data => {
-      document.getElementById("user_container").innerHTML = " ";
-      for(var key in data){
-        if(data[key].email == user_email){
-          console.log(data[key].email +" deleted!");
-          delete data[key];
-        }
-      }
+      delete data[user_email];
+      $.ajax({
+        type: 'POST',
+        url: '../backend/signup.php',
+        data: {Json:data}    
+      })
     })
-
+    test();
 }

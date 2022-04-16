@@ -42,14 +42,6 @@ window.addEventListener('load', async() => {
         document.getElementById("quantity_input").value = foodCounter;
         update_input();
         }
-    
-    function addToCart() {
-    let quantityy = document.getElementById("quantity_input").value;
-                 if(product == "Apple"){
-        document.getElementById("cart-1-quantity").value = quantityy;
-        update_input1();
-    }
-        }
  
 
     

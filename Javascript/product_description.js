@@ -434,10 +434,10 @@ function REMOVE() {
 
 
     function addToCart() {
-    let quantityy = document.getElementById("quantity_input").value;
     let productt = document.getElementById("item_name").innerHTML;
  
                  if(productt == "Apple"){
+        let quantityy = document.getElementById("quantity_input").value;
         document.getElementById("quantity_input").value = 13;
         document.getElementById("cart-1-quantity").value = quantityy;
         update_input1();

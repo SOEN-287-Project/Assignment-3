@@ -48,9 +48,9 @@ window.addEventListener('load', async() => {
     function addToCart() {
     let quantityy = document.getElementById("quantity_input").value;
     let productt = document.getElementById("item_name").value;
+     document.getElementById("quantity_input").value = 1;
+     document.getElementById("item_name").value = "Samsung";
                  if(productt == "Apple"){
-        document.getElementById("quantity_input").value = 1;
-        document.getElementById("item_name").value = "Samsung";
         foodCounter1 = quantityy;
         update_input1();
     }

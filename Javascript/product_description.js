@@ -44,6 +44,14 @@ window.addEventListener('load', async() => {
         }
  
  });
+
+    function addToCart() {
+    let quantityy = document.getElementById("quantity_input").value;
+                 if(product == "Apple"){
+        document.getElementById("cart-1-quantity").value = quantityy;
+        update_input1();
+    }
+        }
     
 
 function update_input() {

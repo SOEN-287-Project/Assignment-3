@@ -561,9 +561,5 @@ function REMOVE() {
 
   update_input1();  
 
- 
-}   
-
-
   }    
 

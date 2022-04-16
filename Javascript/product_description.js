@@ -5,7 +5,7 @@ var image;
 // if(foodCounter == null)
 // foodCounter = 0;
 let url1 = new URLSearchParams(location.search);
-console.log(url1.get('product'))
+console.log(url1.get('product'));
 foodCounter = localStorage.getItem(`${url1.get('product')}foodCounter`);
 
 

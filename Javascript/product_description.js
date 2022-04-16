@@ -43,11 +43,13 @@ window.addEventListener('load', async() => {
         update_input();
         }
     
-    let quantity = document.getElementById("quantity_input").value;
+    function addToCart() {
+    let quantityy = document.getElementById("quantity_input").value;
                  if(product == "Apple"){
-        document.getElementById("cart-1-quantity").value = quantity;
+        document.getElementById("cart-1-quantity").value = quantityy;
         update_input1();
     }
+        }
  
 
     

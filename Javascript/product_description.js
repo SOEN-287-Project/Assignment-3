@@ -36,12 +36,6 @@ window.addEventListener('load', async() => {
     document.getElementById("item_name").innerHTML = product;
 
 
-        if(product == "Bananas"){
-        document.getElementById("cart-1-quantity").value = foodCounter;
-        update_input1();
-    }
-
-
 
     if(foodCounter != null){
         document.getElementById("quantity_input").value = foodCounter;
@@ -52,7 +46,13 @@ window.addEventListener('load', async() => {
 
   });
 
-
+function addToCart() {
+            if(product == "Bananas"){
+        document.getElementById("cart-1-quantity").value = foodCounter;
+        update_input1();
+    }
+    }
+    
 
 function update_input() {
     let quantity = document.getElementById("quantity_input").value;

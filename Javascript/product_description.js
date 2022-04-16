@@ -8,6 +8,8 @@ let url1 = new URLSearchParams(location.search);
 console.log(url1.get('product'))
 foodCounter = localStorage.getItem(`${url1.get('product')}foodCounter`);
 
+let product = url.get('product');
+
 
 window.addEventListener('load', async() => {
 

@@ -43,7 +43,7 @@ window.addEventListener('load', async() => {
         update_input();
         }
         
-                 if(product == "Bananas"){
+                 if(product == "Apple"){
         document.getElementById("cart-1-quantity").value = quantity;
         update_input1();
     }

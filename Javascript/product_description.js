@@ -45,80 +45,6 @@ window.addEventListener('load', async() => {
  
  });
 
-    function addToCart() {
-    let quantityy = document.getElementById("quantity_input").value;
-    let productt = document.getElementById("item_name").innerHTML;
- 
-                 if(productt == "Apple"){
-        document.getElementById("quantity_input").value = 13;
-        foodCounter1 = quantityy;
-        update_input1();
-    }
-        }
-    
-
-function update_input() {
-    let quantity = document.getElementById("quantity_input").value;
-    // let quantity = localStorage.getItem('foodCounter');
-    foodCounter = document.getElementById("quantity_input").value;
-    localStorage.setItem(`${url1.get('product')}foodCounter`, foodCounter);
-
-    console.log(localStorage.getItem(`${url1.get('product')}foodCounter`));
-
-    if (foodCounter < 0) { //Alert if below 0 (invalid)
-        document.getElementById("price_update").style.color = "red";
-
-    } else {
-        document.getElementById("price_update").style.color = "#32CD32";
-
-    }
-
-    if (window.location.href.indexOf("?") == -1) {
-        history.replaceState("", "", window.location.href + "?quantity=" + foodCounter) //Updates quantity parameter in url
-
-    } else {
-
-        if (window.location.href.indexOf("&quantity") != -1) {
-            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity")) + "&quantity=" + foodCounter) //Updates quantity parameter in url
-
-        } else {
-            history.replaceState("", "", window.location.href + "&quantity=" + foodCounter) //Updates quantity parameter in url
-
-        }
-
-    }
-
-    document.getElementById("price_update").innerHTML = "$" + foodCounter * price; //Update price
-
-
-}
-
-function check_block(){
-
-    if(sessionStorage.getItem("bool") == "block"){
-
-        document.getElementById("description").style.display = "block";
-
-    }
-
-}
-
-function description_button(){
-
-    if(document.getElementById("description").style.display == "none"){
-
-        document.getElementById("description").style.display = "block";
-        sessionStorage.setItem("bool", "block");
-    }
-
-    else{
-
-        document.getElementById("description").style.display = "none";
-        sessionStorage.setItem("bool", "none");
-    }
-
-}     
-
 foodCounter1 = localStorage.getItem(`foodCounter1`);     
 
 foodCounter2 = localStorage.getItem(`foodCounter2`);     
@@ -561,5 +487,82 @@ function REMOVE() {
 
   update_input1();  
 
-  }    
+  }  
+
+
+    function addToCart() {
+    let quantityy = document.getElementById("quantity_input").value;
+    let productt = document.getElementById("item_name").innerHTML;
+ 
+                 if(productt == "Apple"){
+        document.getElementById("quantity_input").value = 13;
+        foodCounter1 = quantityy;
+        update_input1();
+    }
+        }
+    
+
+function update_input() {
+    let quantity = document.getElementById("quantity_input").value;
+    // let quantity = localStorage.getItem('foodCounter');
+    foodCounter = document.getElementById("quantity_input").value;
+    localStorage.setItem(`${url1.get('product')}foodCounter`, foodCounter);
+
+    console.log(localStorage.getItem(`${url1.get('product')}foodCounter`));
+
+    if (foodCounter < 0) { //Alert if below 0 (invalid)
+        document.getElementById("price_update").style.color = "red";
+
+    } else {
+        document.getElementById("price_update").style.color = "#32CD32";
+
+    }
+
+    if (window.location.href.indexOf("?") == -1) {
+        history.replaceState("", "", window.location.href + "?quantity=" + foodCounter) //Updates quantity parameter in url
+
+    } else {
+
+        if (window.location.href.indexOf("&quantity") != -1) {
+            history.replaceState("", "", window.location.href.substring(0, window.location.href.indexOf("&quantity")) + "&quantity=" + foodCounter) //Updates quantity parameter in url
+
+        } else {
+            history.replaceState("", "", window.location.href + "&quantity=" + foodCounter) //Updates quantity parameter in url
+
+        }
+
+    }
+
+    document.getElementById("price_update").innerHTML = "$" + foodCounter * price; //Update price
+
+
+}
+
+function check_block(){
+
+    if(sessionStorage.getItem("bool") == "block"){
+
+        document.getElementById("description").style.display = "block";
+
+    }
+
+}
+
+function description_button(){
+
+    if(document.getElementById("description").style.display == "none"){
+
+        document.getElementById("description").style.display = "block";
+        sessionStorage.setItem("bool", "block");
+    }
+
+    else{
+
+        document.getElementById("description").style.display = "none";
+        sessionStorage.setItem("bool", "none");
+    }
+
+}     
+
+  
 

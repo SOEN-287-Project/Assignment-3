@@ -41,11 +41,11 @@ window.addEventListener('load', async() => {
     if(foodCounter != null){
         document.getElementById("quantity_input").value = foodCounter;
         update_input();
+        }
         
                  if(product == "Bananas"){
         document.getElementById("cart-1-quantity").value = quantity;
         update_input1();
-    }
     }
     
 

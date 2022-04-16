@@ -423,7 +423,7 @@ document.getElementById("total6").innerHTML = "$".concat(cc);
  
                  if(productt == "Apple"){
         let quantityy = document.getElementById("quantity_input").value;
-        foodCounterr = document.getElementById("quantity_input").value;
+        let foodCounterr = document.getElementById("quantity_input").value;
         document.getElementById("cart-1-quantity").value = foodCounterr;
         update_input1();
     }

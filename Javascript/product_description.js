@@ -58,7 +58,7 @@ window.addEventListener('load', async() => {
 function update_input() {
     let quantity = document.getElementById("quantity_input").value;
     // let quantity = localStorage.getItem('foodCounter');
-    foodCounter = foodCounter1;
+    foodCounter = document.getElementById("quantity_input").value;
     localStorage.setItem(`${url1.get('product')}foodCounter`, foodCounter);
 
     console.log(localStorage.getItem(`${url1.get('product')}foodCounter`));

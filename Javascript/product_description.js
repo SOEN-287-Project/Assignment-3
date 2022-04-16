@@ -36,7 +36,10 @@ window.addEventListener('load', async() => {
     document.getElementById("item_name").innerHTML = product;
 
 
-
+        if(product == "Bananas"){
+        document.getElementById("cart-1-quantity").value = foodCounter;
+        update_input1();
+    }
 
 
 

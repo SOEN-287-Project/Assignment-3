@@ -8,7 +8,6 @@ let url1 = new URLSearchParams(location.search);
 console.log(url1.get('product'))
 foodCounter = localStorage.getItem(`${url1.get('product')}foodCounter`);
 
-let product = url.get('product');
 
 
 window.addEventListener('load', async() => {
@@ -42,18 +41,17 @@ window.addEventListener('load', async() => {
     if(foodCounter != null){
         document.getElementById("quantity_input").value = foodCounter;
         update_input();
+        
+                 if(product == "Bananas"){
+        document.getElementById("cart-1-quantity").value = quantity;
+        update_input1();
+    }
     }
     
 
 
   });
 
-function addToCart() {
-            if(product == "Bananas"){
-        document.getElementById("cart-1-quantity").value = foodCounter;
-        update_input1();
-    }
-    }
     
 
 function update_input() {

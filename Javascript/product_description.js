@@ -415,22 +415,7 @@ document.getElementById("total6").innerHTML = "$".concat(cc);
 
   
 
-}         
-
-  
-
-function REMOVE() {   
-
-  
-  const element = document.getElementById("firstcart");  
-
-  document.getElementById("cart-1-quantity").value = 0;  
-
-  element.remove(); 
-
-  update_input1();  
-
-  }  
+}          
 
 
     function addToCart() {

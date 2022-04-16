@@ -423,8 +423,8 @@ document.getElementById("total6").innerHTML = "$".concat(cc);
  
                  if(productt == "Apple"){
         let quantityy = document.getElementById("quantity_input").value;
-        document.getElementById("quantity_input").value = 13;
-        document.getElementById("cart-1-quantity").value = quantityy;
+        foodCounterr = document.getElementById("quantity_input").value;
+        document.getElementById("cart-1-quantity").value = foodCounterr;
         update_input1();
     }
         }

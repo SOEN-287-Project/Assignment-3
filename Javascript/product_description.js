@@ -84,64 +84,7 @@ foodCounter17 = localStorage.getItem(`foodCounter17`);
  foodCounter19 = localStorage.getItem(`foodCounter19`);     
 
  foodCounter20 = localStorage.getItem(`foodCounter20`);   
-     
-   if((foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null) ||   
-
-     (foodCounter1 != null) || (foodCounter2 != null) || (foodCounter3 != null))  {     
-
-         	document.getElementById("cart-1-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-2-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-3-quantity").value = foodCounter3;    
-
-         	document.getElementById("cart-4-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-5-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-6-quantity").value = foodCounter3;   
-
-            document.getElementById("cart-7-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-8-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-9-quantity").value = foodCounter3;    
-
-            document.getElementById("cart-10-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-11-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-12-quantity").value = foodCounter3;    
-
-            document.getElementById("cart-13-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-14-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-15-quantity").value = foodCounter3;    
-
-            document.getElementById("cart-16-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-17-quantity").value = foodCounter2;     
-
-         document.getElementById("cart-18-quantity").value = foodCounter3;    
-
-            document.getElementById("cart-19-quantity").value = foodCounter1;     
-
-         document.getElementById("cart-20-quantity").value = foodCounter2;     
-
-         update_input1();     
-
-    }     
+        
 
 function update_input1(){      
 

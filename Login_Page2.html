@@ -38,6 +38,7 @@
 
   <!--Custom Stylesheets-->
   <script src="Javascript/backend.js"></script>
+  <script src="Javascript/login.js"></script>
 
   <!--Grocery Store name -->
   <title>Trader Jack's</title>
@@ -66,9 +67,10 @@
             <label id="validate" style="color: red;visibility:hidden">Invalid</label>
             <br><br>
             <label>Password: </label>
-            <input type="password" name="password" required/>
+            <input type="password" name="password" id="password" required/>
+            <label id="validate6" style="color: red;visibility:hidden">Invalid</label>
             <br><br>
-            <button onclick="validateEmail()" type="button">Submit</button>
+            <button onclick="checkIfValid_Login()" type="button">Submit</button>
             <a href="Recreate_Password.html"><button>Forgot Password</button></a>
         </p>
     </div>

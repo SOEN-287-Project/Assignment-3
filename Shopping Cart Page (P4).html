@@ -38,45 +38,29 @@
 
     <!--Custom Stylesheets-->
     <script src="Javascript/backend.js"></script>
+    <script src="Javascript/shopping_cart.js"></script>
 
     <!--Grocery Store name -->
     <title>Trader Jack's</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.2.1/decimal.js" integrity="sha512-GKse2KVGCCMVBn4riigHjXE8j5hCxYLPXDw8AvcjUtrt+a9TbZFtIKGdArXwYOlZvdmkhQLWQ46ZE3Q1RIa7uQ==" crossorigin="anonymous"></script>
+
 </head>
 <script>
     $(function () {
         $("#navbar").load("Components/navbar.html");
     });
 </script>
-<script>
-function read1(){
-     var x = document.getElementById("cart-1-quantity").value;
- 
-     var y = document.getElementById("cart-2-quantity").value;
- 
-     var z = document.getElementById("cart-3-quantity").value;
-     
-   var a = (x)*4.99 + (y)*4.99 + (z)*4.99;
-  var b = a * 0.1;
-  var c = a * 0.05;
-  var d = a + b + c;
-document.getElementById("total4").innerHTML = "$".concat(a); 
-document.getElementById("total7").innerHTML = "$".concat(d);
-document.getElementById("total5").innerHTML = "$".concat(b);
-document.getElementById("total6").innerHTML = "$".concat(c);
-}
-</script>
 
-    
-
-<body>
+<body onload = "refresh()">
     <div id="navbar"></div>
     <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>
 
         <ul class="list">
 
-            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
-            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "read1()"><button class="add">Add</button>  <button class="remove">remove</button></li>
-            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+            <li> Apple <input type="number" id="cart-1-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add1" class="add" onclick="add()">Add</button> <button class="remove">Remove</button> </li>
+            <li> Bananas <input type="number" id="cart-2-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add2" class="add" onclick="add()">Add</button>  <button class="remove">Remove</button></li>
+            <li> Blueberries <input type="number" id="cart-3-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add3" class="add" onclick="add()">Add</button> <button class="remove">Remove</button> </li>
 
         </ul>
 
@@ -98,5 +82,5 @@ document.getElementById("total6").innerHTML = "$".concat(c);
 
 
 </body>
-</html>
 
+</html>

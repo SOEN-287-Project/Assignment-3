@@ -472,24 +472,6 @@ document.getElementById("total6").innerHTML = "$".concat(cc);
   
 
 }          
-
-
-    function addToCart() {
-    let productt = document.getElementById("item_name").innerHTML;
- 
-                 if(productt == "Apple"){
-        let quantityy = document.getElementById("quantity_input").value;
-        foodCounter1 = localStorage.getItem(`foodCounter1`); 
-        console.log(foodCounter1);
-        foodCounter1 = quantityy;           
-        console.log(foodCounter1);
-        location.replace("https://soen-287-project.github.io/Assignment-3/Shopping%20Cart%20Page%20(P4).html");
-        document.getElementById("cart-1-quantity").value = foodCounter1; 
-        console.log(foodCounter1);
-        update_input1();
-        location.replace("https://soen-287-project.github.io/Assignment-3/Product%20Description%20Page%20(P3).html");
-    }
-        }
     
 
 function update_input() {

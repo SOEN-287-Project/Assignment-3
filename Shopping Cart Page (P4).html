@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -40,171 +38,65 @@
 
     <!--Custom Stylesheets-->
     <script src="Javascript/backend.js"></script>
-    
-     <!--Javascript-->
-    <script src="Javascript/product_description.js"></script>
 
     <!--Grocery Store name -->
     <title>Trader Jack's</title>
 </head>
-    
 <script>
     $(function () {
         $("#navbar").load("Components/navbar.html");
     });
 </script>
-
-<body>    
-
-    <div id="navbar"></div>    
-
-  
-
-    <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>    
-
-         <ul id="list">    
-
-           <li> Apple <input type="number" id="cart-1-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="REMOVE()">remove</button> </li>       
-
-  
-
-          <li> Bananas </li>    
-
-           <li> <input type="number" id="cart-2-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-       <li> Blueberries </li>    
-
-  
-
-      <li> <input type="number" id="cart-3-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-         <li> Celery </li>     
-
-  
-
-            <li> <input type="number" id="cart-4-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-           <li> Cherries </li>    
-
-  
-
-          <li> <input type="number" id="cart-5-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-  
-
-      <li> Cauliflower </li>    
-
-  
-
-      <li> <input type="number" id="cart-6-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-  
-
-   
-
-  
-
-        <li> Grapes </li>     
-
-  
-
-            <li> <input type="number" id="cart-7-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-  
-
-            <li> Lemons </li>    
-
-  
-
-            <li> <input type="number" id="cart-8-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-   
-
-      <li> Lettuce </li>    
-
+<script>
+function read1(){
+     var x = document.getElementById("cart-1-quantity").value;
  
+     var y = document.getElementById("cart-2-quantity").value;
+ 
+     var z = document.getElementById("cart-3-quantity").value;
+     
+   var a = (x)*4.99 + (y)*4.99 + (z)*4.99;
+  var b = a * 0.1;
+  var c = a * 0.05;
+  var d = a + b + c;
+document.getElementById("total4").innerHTML = "$".concat(a); 
+document.getElementById("total7").innerHTML = "$".concat(d);
+document.getElementById("total5").innerHTML = "$".concat(b);
+document.getElementById("total6").innerHTML = "$".concat(c);
+}
+</script>
 
-      <li> <input type="number" id="cart-9-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+    
 
-         <li> Melon </li>     
+<body>
+    <div id="navbar"></div>
+    <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>
 
-            <li> <input type="number" id="cart-10-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+        <ul class="list">
 
-           <li> Mangos </li>    
+            <li> Coffee <input type="number" id="cart-1-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
+            <li> Milk <input type="number" id="cart-2-quantity" value="0" onchange = "read1()"><button class="add">Add</button>  <button class="remove">remove</button></li>
+            <li> Tea <input type="number" id="cart-3-quantity" value="0" onchange = "read1()"><button class="add">Add</button> <button class="remove">remove</button> </li>
 
-           <li> <input type="number" id="cart-11-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+        </ul>
 
-       <li> Oranges </li>    
 
-       <li> <input type="number" id="cart-12-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+    </div>
+    </div>
 
-         <li> Onions </li>     
+    <div class="container2"> <div class="box2"> <h4>Cart Summary</h4> 
+                             <h5>Subtotal: </h5>
+                             <h5 class="price"><span id="total4">$0.00</span></h5>
+                             <h5>QST: </h5>
+                             <h5 class="price"><span id="total5">$0.00</span></h5>
+                             <h5>GST: </h5>
+                             <h5 class="price"><span id="total6">$0.00</span></h5>
+                             <h2>Estimated Total: </h2>
+                             <h5 class="price"><span id="total7">$0.00</span></h5></div></div>
 
-            <li> <input type="number" id="cart-13-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+    <div class="continue_shopping"> <button>Continue Shopping</button> </div>
 
-           <li> Strawberries </li>    
 
-           <li> <input type="number" id="cart-14-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
+</body>
+</html>
 
-       <li> Eggs </li>    
-
-       <li> <input type="number" id="cart-15-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-         <li> Milk </li>     
-
-               <li> <input type="number" id="cart-16-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-           <li> Cheese </li>    
-
-  
-
-          <li> <input type="number" id="cart-17-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-  
-
-      <li> Doritos </li>    
-
-       <li> <input type="number" id="cart-18-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-         <li> Cheetos </li>     
-
-             <li> <input type="number" id="cart-19-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>      
-
-           <li> Lays </li>    
-
-  
-
-          <li> <input type="number" id="cart-20-quantity" min="0" value="0" onchange = "update_input1()"> <button class="remove" onclick="myFunction()">remove</button> </li>       
-
-  
-
-          </ul>    
-
-     </div>    
-
-     </div>   
-
-    <div class="container2"> <div class="box2"> <h4>Cart Summary</h4>     
-
-                              <h5>Subtotal: </h5>    
-
-                              <h5 class="price"><span id="total4">$0.00</span></h5>    
-
-                              <h5>QST: </h5>    
-
-                              <h5 class="price"><span id="total5">$0.00</span></h5>    
-
-                              <h5>GST: </h5>    
-
-                              <h5 class="price"><span id="total6">$0.00</span></h5>    
-
-                              <h2>Estimated Total: </h2>    
-
-                              <h5 class="price"><span id="total7">$0.00</span></h5></div></div>    
-
-     <div class="continue_shopping"> <button>Continue Shopping</button> </div>    
-
- </body>    
-   
-
- </html> 

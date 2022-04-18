@@ -56,12 +56,11 @@
     <div id="navbar"></div>
     <div class="container1"> <div class="box1"> <h1 class="My_cart">My Cart</h1>
 
-        <ul class="list">
+        <ul class="list" id="list1">
 
-            <li> Apple <input type="number" id="cart-1-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add1" class="add" onclick="add()">Add</button> <button class="remove">Remove</button> </li>
-            <li> Bananas <input type="number" id="cart-2-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add2" class="add" onclick="add()">Add</button>  <button class="remove">Remove</button></li>
-            <li> Blueberries <input type="number" id="cart-3-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button id="add3" class="add" onclick="add()">Add</button> <button class="remove">Remove</button> </li>
-
+            <li> Apple <input type="number" id="cart-1-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button> <button class="remove" onclick="remove()">Remove</button> </li>
+            <li> Bananas <input type="number" id="cart-2-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button>  <button class="remove" onclick="remove()">Remove</button></li>
+            <li> Blueberries <input type="number" id="cart-3-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button> <button class="remove" onclick="remove()">Remove</button> </li>
         </ul>
 
 
@@ -78,7 +77,7 @@
                              <h2>Estimated Total: </h2>
                              <h5 class="price"><span id="total7">$0.00</span></h5></div></div>
 
-    <div class="continue_shopping"> <button>Continue Shopping</button> </div>
+    <div class="continue_shopping"> <button onclick="location.href='index.html'">Continue Shopping</button> </div>
 
 
 </body>

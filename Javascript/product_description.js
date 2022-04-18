@@ -49,8 +49,6 @@ window.addEventListener('load', async() => {
 
   });
 
-
-
 function update_input() {
     let quantity = document.getElementById("quantity_input").value;
     // let quantity = localStorage.getItem('foodCounter');

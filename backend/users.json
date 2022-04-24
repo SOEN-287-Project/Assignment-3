@@ -9,5 +9,10 @@
         "firstName":"Alice",
         "lastName":"Jackson",
         "postalCode":"H8G 1R8"
+    },"Admin":{
+        "password":"Admin",
+        "firstName":"Admin",
+        "lastName":"Account",
+        "postalCode":"0"
     }
 }

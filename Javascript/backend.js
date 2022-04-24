@@ -1,5 +1,11 @@
 //Check value of #selectBackend and serve corresponding html
 function check_display_backend(){
+    if(localStorage.getItem("LogInEmail") != "Admin"){
+        alert("You are not logged in as Admin Account!\n Try connecting with Email: Admin, Password: Admin")
+        window.location.href = "index.html";
+        return;
+    }
+
     var choice = document.getElementById("selectBackend").value;
     if (choice == "products"){
         $( "#backend_display" ).load( "backend/products.html" );

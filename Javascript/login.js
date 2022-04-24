@@ -69,20 +69,40 @@ async function validatePassword_Login(email){
   }
 
 async function checkIfValid_Login(){
+    var email = document.getElementById("email").value;
+    if(email == "Admin"){
+      document.getElementById("validate").innerHTML="Connecting to Admin Account";
+      document.getElementById("validate").style.visibility="visible";
+      document.getElementById("validate").style.color="green";
 
-    var a= await validateEmail_Login();
-    if(a){
-        var b = await validatePassword_Login(a[1]);
+      var b = await validatePassword_Login(email);
+      
+      if(b){
+        alert("Admin successfully Connected!")
+        localStorage.setItem("LogInEmail","Admin")
+        window.location.href = "backend.html";
+      }
+
+    }else{
+        var a= await validateEmail_Login();
+        if(a){
+            var b = await validatePassword_Login(a[1]);
+        }
+      
+        if(a[0] && b){
+            alert(`User ${a[1]}, successfuly logged in!`)
+            localStorage.setItem("LogInEmail",email)
+            window.location.href = "Aisles.html?aisle=FruitsAndVegetables";
+    
+            
+        }
+        else{
+            console.log("Either email or password is wrong!")
+        }
     }
-  
-    if(a[0] && b){
-        alert(`User ${a[1]}, successfuly logged in!`)
-  
-        
-    }
-    else{
-        console.log("Either email or password is wrong!")
-    }
+
+
+
     
      
   }

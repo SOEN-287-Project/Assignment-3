@@ -12,6 +12,17 @@ body {
 
 /* Navbar */
 
+#UserDisplay{
+  position: absolute;
+  right: 40px;
+  top:80px;
+  z-index: 1;
+  color:black;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+}
+
 .container-fluid {
   background-color: black;
   padding: 10px;

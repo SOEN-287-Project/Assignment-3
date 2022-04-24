@@ -1,1 +1,13 @@
-{"JoeSchmo@gmail.com":{"password":"test","firstName":"Joel","lastName":"Testers","postalCode":"H3G 1M4","email":"JoeSchmo@gmail.com"},"tester@gmail.com":{"password":"tester","firstName":"Chems-Eddine","lastName":"Saidi","postalCode":"H1G 4V9","email":"tester@gmail.com"},"tester3@gmail.com":{"password":"tester123","firstName":"Micheals","lastName":"Jackson","postalCode":"H1G4V7","email":"tester3@gmail.com"}}
+{
+    "JoeSchmo@gmail.com":{
+        "password":"123",
+        "firstName":"Joe",
+        "lastName":"Schmo",
+        "postalCode":"H3G 1M8"
+    },"AliceJackson@yahoo.ca":{
+        "password":"456",
+        "firstName":"Alice",
+        "lastName":"Jackson",
+        "postalCode":"H8G 1R8"
+    }
+}

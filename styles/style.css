@@ -228,6 +228,19 @@ body {
   color: red;
 }
 
+.close_btn2 {
+  color: darkred;
+  cursor: pointer;
+
+}
+.close_btn2:hover {
+  color: darkorange;
+}
+
+.close_btn2:active {
+  color: red;
+}
+
 .edit_btn {
   cursor: pointer;
   float: right;
@@ -241,6 +254,16 @@ body {
 .edit_btn:active {
   color: red;
 }
+
+.edit_btn2:hover {
+  color: darkorange;
+}
+
+.edit_btn2:active {
+  color: red;
+}
+
+
 
 .add_aisle_btn {
   margin: 30px auto;

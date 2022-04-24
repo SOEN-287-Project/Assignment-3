@@ -8,13 +8,9 @@ function check_display_backend(){
         $( "#backend_display" ).load( "backend/orders.html" );
 
     }else if(choice == "users"){
-        $( "#backend_display" ).load( "backend/page9.html" );
+        $( "#backend_display" ).load( "backend/users.html" );
 
     }
-    else if(choice == "user_edit"){
-        $( "#backend_display" ).load( "backend/page10.html" );
-    }
-
 }
 
 

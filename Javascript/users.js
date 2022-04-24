@@ -132,7 +132,7 @@ function deleteUser(email){
 }
 
 function save_edit_user(email){
-
+    
     if(document.getElementById("emailEdit").value == ""){
         alert("Cannot leave leave email empty. Please try again.");
         return;
@@ -159,12 +159,16 @@ function save_edit_user(email){
         alert("Cannot leave Postal Code empty. Please try again.");
         return;
     }
+    
+    var newEmail = document.getElementById("emailEdit").value;
 
-    json[email] = {};
-    json[email].password = document.getElementById("passwordEdit").value;
-    json[email].firstName = document.getElementById("firstNameEdit").value;
-    json[email].lastName = document.getElementById("lastNameEdit").value;
-    json[email].postalCode = document.getElementById("postalCodeEdit").value;
+    delete json[email];
+
+    json[newEmail] = {};
+    json[newEmail].password = document.getElementById("passwordEdit").value;
+    json[newEmail].firstName = document.getElementById("firstNameEdit").value;
+    json[newEmail].lastName = document.getElementById("lastNameEdit").value;
+    json[newEmail].postalCode = document.getElementById("postalCodeEdit").value;
 
 
     $.ajax({

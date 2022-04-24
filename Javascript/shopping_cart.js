@@ -283,3 +283,69 @@ function clamp(nbr){
 
     return nbr;
 }
+
+
+async function addtocart(){
+    if(localStorage.getItem("LogInEmail") == null){
+        alert("Please Login or Sign up in order to add item to cart.");
+        window.location.href = "index.html";
+        return;
+    }
+
+    
+
+    var email = localStorage.getItem("LogInEmail");
+
+    json_cart = await fetch("backend/orders.json")
+        .then(response => {
+        return response.json();
+        })
+
+    let url = new URLSearchParams(location.search);
+    let aisle = url.get('aisle');
+    let product = url.get('product');
+
+    if(!(email in json_cart)){ //Create empty cart
+        json_cart[email] = {};
+        json_cart[email].cart = {};
+    }
+    
+    if(aisle in json_cart[email]["cart"]){
+        json_cart[email]["cart"][aisle][product] = document.getElementById("quantity_input").value;
+
+    }else{
+        json_cart[email]["cart"][aisle] = {};
+        json_cart[email]["cart"][aisle][product] = document.getElementById("quantity_input").value;
+    }
+
+    if (document.getElementById("quantity_input").value < 1){
+        alert("Please enter a quantity above 0")
+        return;
+    }
+
+
+    $.ajax({
+        type: 'POST',
+        url: 'backend/orders_edit.php',
+        data: {Json:json_cart}    
+
+    })
+    .done( function( data ) {
+
+        alert("Successfully Added to Cart.")
+
+        setTimeout(function () {
+            location.reload();
+
+        }, 2200);
+
+
+    })
+    .fail( function( data ) {
+
+        alert("Attempted to add to Cart but failed.")
+
+    });
+
+    
+}

@@ -28,18 +28,41 @@ async function check_user(){
     if(localStorage.getItem("LogInEmail") != null){
 
         var email = localStorage.getItem("LogInEmail");
+
+        json_cart = await fetch("backend/orders.json")
+        .then(response => {
+        return response.json();
+        })
+
+        if(!(email in json_cart)){
+            cart_count =0;
+        }else{
+            cart_count = countCartItems(email)
+        }
         
+
         var shoppingCart = `
         
         <a href="Shopping Cart Page (P4).html"><button type="button" class="btn btn-primary cart_btn">
         
         <i class="fa cart_icon">&#xf07a;</i>
-        <span class="badge badge-light badge_background" id="nb_items_cart">9</span>
+        <span class="badge badge-light badge_background" id="nb_items_cart">`+cart_count+`</span>
         </button></a>`
         document.getElementById("shoppingCartSpan").innerHTML = shoppingCart;
 
         document.getElementById("UserDisplay").innerHTML = `<i class="far fa-user" title="`+json_users[email].firstName+` `+json_users[email].lastName+`"></i>`
 
+    }
+
+    function countCartItems(email){
+
+        var Aisles = Object.keys(json_cart[email].cart);
+        var count = 0;
+
+        Aisles.forEach(aisle => {
+            count += Object.keys(json_cart[email]["cart"][aisle]).length;
+        });
+        return count;
     }
 
 }

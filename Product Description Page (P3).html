@@ -73,7 +73,7 @@
             <label for="quantity_input">How many?</label>
             <input type="number" id="quantity_input" min = "0" oninput="this.value = Math.abs(this.value)" onchange="update_input()"/>
         </div>
-        <div class="Shopping_Cart_Button"><button id = "add_to_cart">Add to Cart</button></div>
+        <div class="Shopping_Cart_Button"><button id = "add_to_cart" style="cursor: pointer;" onclick="addtocart()">Add to Cart</button></div>
         <div class="price_txt">Price: <span id="price_update"></span></div>
 
     </div>

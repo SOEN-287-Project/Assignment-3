@@ -121,7 +121,7 @@ function add_aisle(newAisle){
         <label class="input margin_top_25">   
         <div class="input_label">Aisle Name</div>
     
-        <textarea class="input_edit" type="text" id="aisleName" placeholder="(Spaces permitted - displayed in navbar)" value=""/>`+newAisle+`</textarea>
+        <textarea class="input_edit" type="text" id="aisleName" placeholder="(No spaces between words - ie FruitsAndVegetables)" value=""/>`+newAisle+`</textarea>
 
         </label>
     

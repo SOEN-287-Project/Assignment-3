@@ -50,6 +50,8 @@
     $(function () {
         $("#navbar").load("Components/navbar.html");
     });
+
+    
 </script>
 
 <body onload = "refresh()">
@@ -58,9 +60,7 @@
 
         <ul class="list" id="list1">
 
-            <li> Apple <input type="number" id="cart-1-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button> <button class="remove" onclick="remove()">Remove</button> </li>
-            <li> Bananas <input type="number" id="cart-2-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button>  <button class="remove" onclick="remove()">Remove</button></li>
-            <li> Blueberries <input type="number" id="cart-3-quantity" value="0" min = "0" oninput="this.value = Math.abs(this.value)"><button class="add" onclick="add()">Add</button> <button class="remove" onclick="remove()">Remove</button> </li>
+
         </ul>
 
 
@@ -77,7 +77,7 @@
                              <h2>Estimated Total: </h2>
                              <h5 class="price"><span id="total7">$0.00</span></h5></div></div>
 
-    <div class="continue_shopping"> <button onclick="location.href='index.html'">Continue Shopping</button> </div>
+    <div class="continue_shopping"> <button style = "cursor: pointer;" onclick="submit_order()">Submit Order</button> <button style="margin-left: 10px; margin-top: 5px; cursor: pointer;" onclick="location.href='Aisles.html?aisle=FruitsAndVegetables'">Continue Shopping</button> </div>
 
 
 </body>

@@ -55,7 +55,10 @@ async function check_user(){
     }
 
     function countCartItems(email){
-
+        if(!("cart" in json_cart[email])){
+            return 0;
+        }
+        
         var Aisles = Object.keys(json_cart[email].cart);
         var count = 0;
 

@@ -9,10 +9,16 @@ var Total = 0;
 
 
 document.addEventListener('DOMContentLoaded', e =>{
+    let list = document.getElementById("list1");
 
+    if(list === null){
+        return;
+    }
+    displayCartProducts();
+
+    
     let button = document.getElementById("add_to_cart");
 
-    let list = document.getElementById("list1");
 
     button.addEventListener('click', e =>{
 
@@ -309,6 +315,11 @@ async function addtocart(){
         json_cart[email] = {};
         json_cart[email].cart = {};
     }
+
+    else if(!("cart" in json_cart[email])){ //Create empty cart
+        json_cart[email].cart = {};
+        console.log("test no")
+    }
     
     if(aisle in json_cart[email]["cart"]){
         json_cart[email]["cart"][aisle][product] = document.getElementById("quantity_input").value;
@@ -322,7 +333,8 @@ async function addtocart(){
         alert("Please enter a quantity above 0")
         return;
     }
-
+    console.log(json_cart)
+    console.log(Object.keys(json_cart[email]))
 
     $.ajax({
         type: 'POST',
@@ -337,7 +349,7 @@ async function addtocart(){
         setTimeout(function () {
             location.reload();
 
-        }, 2200);
+        }, 500);
 
 
     })
@@ -348,4 +360,162 @@ async function addtocart(){
     });
 
     
+}
+
+async function displayCartProducts(){
+
+    let html = "";
+    var email = localStorage.getItem("LogInEmail");
+
+    json_cart = await fetch("backend/orders.json")
+        .then(response => {
+        return response.json();
+    })
+
+    if(!(email in json_cart)){
+        cart_count =0;
+    }else{
+        cart_count = countCartItems(email)
+    }
+
+    if(cart_count == 0){
+        html = "Your Cart is empty."
+    }else{
+
+
+        var Aisles = Object.keys(json_cart[email].cart);
+
+        Aisles.forEach(aisle => {
+            var Products = Object.keys(json_cart[email]["cart"][aisle]);
+            Products.forEach(product => {
+                html +=  `<li> `+product+`<input style="margin-left:10px;"type="number" id="cart-`+aisle+`-`+product+`" value="`+json_cart[email]["cart"][aisle][product]+`" min = "0" oninput="this.value = Math.abs(this.value)"> <button style="cursor:pointer;" class="remove" onclick="update('`+aisle+`','`+product+`')">Update</button> </li> `
+
+            })
+        });
+
+
+    }
+
+    document.getElementById("list1").innerHTML = html;
+
+    
+
+
+
+}
+
+async function update(aisle,product){
+    var email = localStorage.getItem("LogInEmail");
+    var qty = document.getElementById("cart-"+aisle+"-"+product).value;
+    document.getElementById("cart-"+aisle+"-"+product).style.color="black";
+
+
+    if(qty < 1){
+        alert("Please enter a quantity above 0")
+        document.getElementById("cart-"+aisle+"-"+product).style.color="red";
+        return;
+    }
+
+    json_cart = await fetch("backend/orders.json")
+    .then(response => {
+    return response.json();
+    })
+
+    json_cart[email]["cart"][aisle][product] = qty;
+
+    $.ajax({
+        type: 'POST',
+        url: 'backend/orders_edit.php',
+        data: {Json:json_cart}    
+
+    })
+    .done( function( data ) {
+
+        alert("Successfully Updated Cart.")
+
+        setTimeout(function () {
+            location.reload();
+
+        }, 500);
+
+
+    })
+    .fail( function( data ) {
+
+        alert("Attempted to update Cart but failed.")
+
+    });
+}
+
+function countCartItems(email){
+
+    if(!("cart" in json_cart[email])){
+        return 0;
+    }
+
+    var Aisles = Object.keys(json_cart[email].cart);
+    var count = 0;
+
+    Aisles.forEach(aisle => {
+        count += Object.keys(json_cart[email]["cart"][aisle]).length;
+    });
+    return count;
+}
+
+async function submit_order(){
+    var email = localStorage.getItem("LogInEmail");
+
+    json_cart = await fetch("backend/orders.json")
+        .then(response => {
+        return response.json();
+    })
+
+    if(!(email in json_cart)){
+        cart_count =0;
+    }else{
+        cart_count = countCartItems(email)
+    }
+
+    if(cart_count == 0){
+        alert("Your Cart is empty. Submit Order failed.")
+        return;
+    }else{
+
+        var idCount = json_cart["IdCount"]; //Get OrderId
+        json_cart["IdCount"] = parseInt(idCount)+1; //Increment OrderId for next time
+
+        var orderIndex = Object.keys(json_cart[email]).length-1;
+
+        json_cart[email]["Order"+orderIndex] = JSON.parse(JSON.stringify(json_cart[email]["cart"]));; //Make deep copy of cart Object
+        json_cart[email]["Order"+orderIndex]["OrderId"] = idCount;
+        json_cart[email]["cart"] ={};
+        console.log(json_cart)
+
+        $.ajax({
+            type: 'POST',
+            url: 'backend/orders_edit.php',
+            data: {Json:json_cart}    
+    
+        })
+        .done( function( data ) {
+    
+            alert("Order successfully created.")
+            setTimeout(function () {
+                location.reload();
+    
+            }, 500);
+
+    
+    
+        })
+        .fail( function( data ) {
+    
+            alert("Attempted to create order but failed.")
+    
+        });
+       
+
+
+    }
+
 }

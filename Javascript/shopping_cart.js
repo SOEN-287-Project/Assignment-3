@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', e =>{
         return;
     }
     displayCartProducts();
-
+    calculate_total();
     
     let button = document.getElementById("add_to_cart");
 
@@ -388,7 +388,14 @@ async function displayCartProducts(){
         Aisles.forEach(aisle => {
             var Products = Object.keys(json_cart[email]["cart"][aisle]);
             Products.forEach(product => {
-                html +=  `<li> `+product+`<input style="margin-left:10px;"type="number" id="cart-`+aisle+`-`+product+`" value="`+json_cart[email]["cart"][aisle][product]+`" min = "0" oninput="this.value = Math.abs(this.value)"> <button style="cursor:pointer;" class="remove" onclick="update('`+aisle+`','`+product+`')">Update</button> </li> `
+                html +=  `
+                <li> `+product+`<input style="margin-left:10px;"type="number" id="cart-`+aisle+`-`+product+`" value="`+json_cart[email]["cart"][aisle][product]+`" min = "0" oninput="this.value = Math.abs(this.value)" onchange="calculate_total()"> 
+                <span class = "float_right">
+
+                <i class="fa fa-trash trash_cart" aria-hidden="true" onclick = "delete_from_cart('`+aisle+`','`+product+`')"></i>
+                <button style="cursor:pointer;" class="" onclick="update('`+aisle+`','`+product+`')">Update</button> </li>
+                </span>
+                `
 
             })
         });
@@ -517,5 +524,70 @@ async function submit_order(){
 
 
     }
+
+}
+
+
+async function delete_from_cart(aisle,product){
+    var email = localStorage.getItem("LogInEmail");
+
+    json_cart = await fetch("backend/orders.json")
+    .then(response => {
+    return response.json();
+    })
+
+    delete json_cart[email]["cart"][aisle][product];
+
+    $.ajax({
+        type: 'POST',
+        url: 'backend/orders_edit.php',
+        data: {Json:json_cart}    
+
+    })
+    .done( function( data ) {
+
+        alert("Successfully deleted product from Cart.")
+
+        setTimeout(function () {
+            location.reload();
+
+        }, 500);
+
+
+    })
+    .fail( function( data ) {
+
+        alert("Attempted to deleted product from Cart but failed.")
+
+    });
+    
+}
+
+async function calculate_total(){
+    var json_products = await fetch("backend/product_info.json")
+    .then(response => {
+    return response.json();
+    })
+    var email = localStorage.getItem("LogInEmail");
+    var Aisles = Object.keys(json_cart[email].cart);
+    var total = 0;
+
+    Aisles.forEach(aisle => {
+        var Products = Object.keys(json_cart[email]["cart"][aisle]);
+        Products.forEach(product => {
+            total += document.getElementById("cart-"+aisle+"-"+product).value * json_products[aisle][product]["Price"];
+        })
+
+    });
+
+    var qst = Math.round(total*0.09975 * 100) / 100;
+    var gst = Math.round(total*0.05 * 100) / 100;
+
+
+    document.getElementById("total4").innerHTML = "$"+Math.round(total*100) / 100;
+    document.getElementById("total5").innerHTML = "$"+qst;
+    document.getElementById("total6").innerHTML = "$"+gst;
+    document.getElementById("total7").innerHTML = "$"+Math.round((total+gst+qst)*100) / 100;
+
 
 }

@@ -96,7 +96,18 @@ body {
   color:red;
 }
 
+.trash_cart:hover{
+  color:red;
+}
 
+.trash_cart:active{
+  color:orange;
+}
+
+.trash_cart{
+  margin-right:10px;
+  cursor:pointer;
+}
 
 .table_display:hover .trash_display{
   visibility:visible;
@@ -377,6 +388,10 @@ body {
   width: 50px;
   background-color: grey;
   margin-top: 15px;
+}
+
+.float_right{
+  float: right;
 }
 
 .input {

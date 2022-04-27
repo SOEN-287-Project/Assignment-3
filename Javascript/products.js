@@ -1,4 +1,4 @@
-
+    
 productHTML(); //Displays all aisles and html for collapseables
 
 function deleteAisle(aisle){

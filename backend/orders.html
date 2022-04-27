@@ -1,120 +1,12 @@
+<script src="Javascript/orders.js"></script>
+
 <!-- This html is displayed when orders is selected in #selectBackend -->
 <div class="container">
     <!-- Order ID and client username -->
-<div class="container order_color" onclick="document.getElementById('display1').click();">
-    <i class="far fa-user"></i>
-    Joe
-    <button id = "display1" class="btn position_right button_display_2" type="button" data-toggle="collapse" data-target="#collapseable1" aria-expanded="false" aria-controls="collapseable1">
-        <i class="fas fa-chevron-circle-down"></i>
-    </button>
-    <div class="container">
-        Order ID: #1231232
-        
-    </div>
-
-
-
-</div>
-
-    <!-- Display order info -->
-<div class="container">
-
-    <div class="margin-20 product_div collapse" id="collapseable1">
-        <span class="close_btn">
-            <i class="far fa-times-circle"></i>
-        </span>
-    
-        <span class="edit_btn" onclick="display_edit_demo_orders()">
-            <i class="far fa-edit"></i>
-        </span>
-        <span class= "product_text">5 apples, 2 flaming hot cheetos, 1 Sour Patch Kids</span>
-    
-
-    
-    
-    </div>
-
-
-</div>
-
-
-    <!-- Order ID and client username -->
-    <div class="container  order_color" onclick="document.getElementById('display2').click();">
-        <i class="far fa-user"></i>
-        John
-        <button id = "display2" class="btn position_right button_display_2" type="button" data-toggle="collapse" data-target="#collapseable2" aria-expanded="false" aria-controls="collapseable2">
-            <i class="fas fa-chevron-circle-down"></i>
-        </button>
-        <div class="container">
-            Order ID: #23465433
-            
-        </div>
-    
-    
-    
-    </div>
-    
-        <!-- Display order info -->
-    <div class="container">
-    
-        <div class="margin-20 product_div collapse" id="collapseable2">
-        
-            <span class="close_btn">
-                <i class="far fa-times-circle"></i>
-            </span>
-        
-            <span class="edit_btn" onclick="display_edit_demo_orders()">
-                <i class="far fa-edit"></i>
-            </span>
-            <span class= "product_text">2 bananas, 1 flaming hot cheetos, 1 butter, 1 milk</span>
-
-        
-        
-        </div>
-    
-    
-    </div>
-
-        <!-- Order ID and client username -->
-        <div class="container  order_color" onclick="document.getElementById('display3').click();">
-            <i class="far fa-user"></i>
-            Alice
-            <button id = "display3" class="btn position_right button_display_2" type="button" data-toggle="collapse" data-target="#collapseable3" aria-expanded="false" aria-controls="collapseable3">
-                <i class="fas fa-chevron-circle-down"></i>
-            </button>
-            <div class="container">
-                Order ID: #45656476
-                
-            </div>  
-        
-        
-        
-        </div>
-        
-            <!-- Display order info -->
-        <div class="container">
-        
-            <div class="margin-20 product_div collapse" id="collapseable3">
-            
-                <span class="close_btn">
-                    <i class="far fa-times-circle"></i>
-                </span>
-            
-                <span class="edit_btn" onclick="display_edit_demo_orders()">
-                    <i class="far fa-edit"></i>
-                </span>
-                <span class= "product_text">1 orange, 3 flaming hot cheetos, 2 sour patch kids, 1 chips ahoy cookies</span>
-    
-            
-            
-            </div>
-        
-        
-        </div>
-
+    <span id="OrdersSpan"></span>
         <!-- Add order button -->
     <div class="container text-center">
-        <button type="button" class="btn btn-outline-primary add_aisle_btn"> + Add order + </button>
+        <button type="button" class="btn btn-outline-primary add_aisle_btn" onclick="add_new_order()"> + Add order + </button>
     
     </div>
 

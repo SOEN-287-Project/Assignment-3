@@ -361,6 +361,24 @@ body {
   font-size: 40px;
 }
 
+.edit_select {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.qty_order{
+  color:black;
+}
+
+.input_qty{
+  width: 50px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
 .input {
   width: 80%;
   margin-left: 10%;

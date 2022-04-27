@@ -401,6 +401,8 @@ function save_add_product2(){
 }
 
 function delete_order(email,order){
+    if(confirm("Are you sure you would like to delete this order?")){
+
     delete json[email][order];
     $.ajax({
         type: 'POST',
@@ -428,6 +430,7 @@ function delete_order(email,order){
         }, 500);
 
     });
+    }
 }
 
 function add_product_order2(){

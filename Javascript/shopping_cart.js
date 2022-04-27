@@ -529,37 +529,41 @@ async function submit_order(){
 
 
 async function delete_from_cart(aisle,product){
-    var email = localStorage.getItem("LogInEmail");
+    if(confirm("Are you sure you would like to remove this item from cart?")){
+        var email = localStorage.getItem("LogInEmail");
 
-    json_cart = await fetch("backend/orders.json")
-    .then(response => {
-    return response.json();
-    })
+        json_cart = await fetch("backend/orders.json")
+        .then(response => {
+        return response.json();
+        })
+    
+        delete json_cart[email]["cart"][aisle][product];
+    
+        $.ajax({
+            type: 'POST',
+            url: 'backend/orders_edit.php',
+            data: {Json:json_cart}    
+    
+        })
+        .done( function( data ) {
+    
+            alert("Successfully deleted product from Cart.")
+    
+            setTimeout(function () {
+                location.reload();
+    
+            }, 500);
+    
+    
+        })
+        .fail( function( data ) {
+    
+            alert("Attempted to deleted product from Cart but failed.")
+    
+        });
+    }
 
-    delete json_cart[email]["cart"][aisle][product];
-
-    $.ajax({
-        type: 'POST',
-        url: 'backend/orders_edit.php',
-        data: {Json:json_cart}    
-
-    })
-    .done( function( data ) {
-
-        alert("Successfully deleted product from Cart.")
-
-        setTimeout(function () {
-            location.reload();
-
-        }, 500);
-
-
-    })
-    .fail( function( data ) {
-
-        alert("Attempted to deleted product from Cart but failed.")
-
-    });
+    
     
 }
 

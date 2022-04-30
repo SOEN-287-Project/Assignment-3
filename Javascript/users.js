@@ -1,7 +1,7 @@
 usersHTML();
 async function usersHTML(){
     //Fetch info from json file
-    json = await fetch("backend/users.json")
+    json = await fetch("backend/users.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })

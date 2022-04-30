@@ -6,7 +6,7 @@ async function displayAisle(){
     console.log(url)
     let aisle = url.get('aisle');
 
-    json = await fetch("backend/product_info.json")
+    json = await fetch("backend/product_info.json",{cache: "no-store"})
         .then(response => {
         return response.json();
         })

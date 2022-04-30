@@ -5,7 +5,7 @@ check_user();
 
 async function displayAislesNav(){
     var html= ""
-    json = await fetch("backend/product_info.json")
+    json = await fetch("backend/product_info.json",{cache: "no-store"})
         .then(response => {
         return response.json();
         })
@@ -20,7 +20,7 @@ async function displayAislesNav(){
 }
 
 async function check_user(){
-    json_users = await fetch("backend/users.json")
+    json_users = await fetch("backend/users.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })
@@ -29,7 +29,7 @@ async function check_user(){
 
         var email = localStorage.getItem("LogInEmail");
 
-        json_cart = await fetch("backend/orders.json")
+        json_cart = await fetch("backend/orders.json",{cache: "no-store"})
         .then(response => {
         return response.json();
         })

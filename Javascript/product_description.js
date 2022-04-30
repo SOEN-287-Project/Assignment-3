@@ -21,7 +21,7 @@ window.addEventListener('load', async() => {
 
 
     //Get necessary data from json file
-    var json = await fetch("backend/product_info.json")
+    var json = await fetch("backend/product_info.json",{cache: "no-store"})
     .then(response => {
        return response.json();
     })

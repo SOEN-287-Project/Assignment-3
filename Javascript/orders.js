@@ -3,7 +3,7 @@ select_products();
 select_users();
 async function select_products(){
     prod_select = "  <select name='product' id='products_select'>";
-    json_products = await fetch("backend/product_info.json").then(response => {
+    json_products = await fetch("backend/product_info.json",{cache: "no-store"}).then(response => {
         return response.json();
         });
 
@@ -23,7 +23,7 @@ async function select_products(){
 
 async function select_users(){
     users_select = "<select name='users' id='users_select'>"
-    json_users = await fetch("backend/users.json").then(response => {
+    json_users = await fetch("backend/users.json",{cache: "no-store"}).then(response => {
         return response.json();
         });
     for(var email in json_users){
@@ -34,10 +34,10 @@ async function select_users(){
 }
 
 async function display_orders(){
-    json = await fetch("backend/orders.json").then(response => {
+    json = await fetch("backend/orders.json",{cache: "no-store"}).then(response => {
         return response.json();
         });
-    json_users = await fetch("backend/users.json").then(response => {
+    json_users = await fetch("backend/users.json",{cache: "no-store"}).then(response => {
         return response.json();
         });
     
@@ -51,57 +51,62 @@ async function display_orders(){
             if(order == "cart"){ //Skip cart
                 continue;
             }else{
-                var OrderId;
-                var OrderString = "";
-                var name = json_users[email]["firstName"] + " " + json_users[email]["lastName"];
-                for(var aisle in json[email][order]){
-                    if(aisle == "OrderId"){
-                        OrderId = json[email][order][aisle];
-                    }else{
-                        for(var item in json[email][order][aisle]){
-                            OrderString+= (" "+ item + ": " + json[email][order][aisle][item]+";");
+                if(email in json_users){
+                    var OrderId;
+                    var OrderString = "";
+                    var name = json_users[email]["firstName"] + " " + json_users[email]["lastName"];
+                    for(var aisle in json[email][order]){
+                        if(aisle == "OrderId"){
+                            OrderId = json[email][order][aisle];
+                        }else{
+                            for(var item in json[email][order][aisle]){
+                                OrderString+= (" "+ item + ": " + json[email][order][aisle][item]+";");
+                            }
                         }
+                        
                     }
-                }
 
-                var html = `<div class="container order_color" onclick="document.getElementById('display` + OrderId+ `').click();">
-                <i class="far fa-user"></i>
-                ` + name+ `
-                <button id = "display` + OrderId+ `" class="btn position_right button_display_2" type="button" data-toggle="collapse" data-target="#collapseable` + OrderId+ `" aria-expanded="false" aria-controls="collapseable` + OrderId+ `">
-                    <i class="fas fa-chevron-circle-down"></i>
-                </button>
+                    var html = `<div class="container order_color" onclick="document.getElementById('display` + OrderId+ `').click();">
+                    <i class="far fa-user"></i>
+                    ` + name+ `
+                    <button id = "display` + OrderId+ `" class="btn position_right button_display_2" type="button" data-toggle="collapse" data-target="#collapseable` + OrderId+ `" aria-expanded="false" aria-controls="collapseable` + OrderId+ `">
+                        <i class="fas fa-chevron-circle-down"></i>
+                    </button>
+                    <div class="container">
+                        Order ID: #` + OrderId+ `
+                        
+                    </div>
+                
+                
+                
+                </div>
+                
+                    <!-- Display order info -->
                 <div class="container">
-                    Order ID: #` + OrderId+ `
+                
+                    <div class="margin-20 product_div collapse" id="collapseable` + OrderId+ `">
+                        <span class="close_btn" onclick="delete_order('` + email+ `','` + order+ `')">
+                            <i class="far fa-times-circle"></i>
+                        </span>
                     
-                </div>
-            
-            
-            
-            </div>
-            
-                <!-- Display order info -->
-            <div class="container">
-            
-                <div class="margin-20 product_div collapse" id="collapseable` + OrderId+ `">
-                    <span class="close_btn" onclick="delete_order('` + email+ `','` + order+ `')">
-                        <i class="far fa-times-circle"></i>
-                    </span>
+                        <span class="edit_btn" onclick="edit_orders('` + email+ `','` + order+ `')">
+                            <i class="far fa-edit"></i>
+                        </span>
+                        <span class= "product_text">` + OrderString+ `</span>
+                    
                 
-                    <span class="edit_btn" onclick="edit_orders('` + email+ `','` + order+ `')">
-                        <i class="far fa-edit"></i>
-                    </span>
-                    <span class= "product_text">` + OrderString+ `</span>
-                
-            
+                    
+                    
+                    </div>
                 
                 
                 </div>
-            
-            
-            </div>
-            
-            `
-            document.getElementById("OrdersSpan").innerHTML += html;
+                
+                `
+                document.getElementById("OrdersSpan").innerHTML += html;
+                }else{
+                    delete json[email];
+                }
 
 
             }

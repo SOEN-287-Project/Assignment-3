@@ -3,7 +3,7 @@
 
 async function validateEmail()
 {
-  usersList = await fetch("backend/users.json")
+  usersList = await fetch("backend/users.json",{cache: "no-store"})
   .then(response => {
   return response.json();
   })
@@ -165,6 +165,8 @@ async function checkIfValid(){
     .done( function( data ) {
 
         alert("User added to server.");
+        location.href = "./Login_Page2.html";
+
 
 
     })

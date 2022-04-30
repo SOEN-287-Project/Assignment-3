@@ -515,7 +515,7 @@ async function save_add_product(aisle){
 
 async function productHTML(){
     //Fetch info from json file
-    json = await fetch("backend/product_info.json")
+    json = await fetch("backend/product_info.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })

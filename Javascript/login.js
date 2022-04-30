@@ -1,6 +1,6 @@
 async function validateEmail_Login()
 {
-  usersList = await fetch("backend/users.json")
+  usersList = await fetch("backend/users.json",{cache: "no-store"})
   .then(response => {
   return response.json();
   })
@@ -38,7 +38,7 @@ async function validateEmail_Login()
 }
 
 async function validatePassword_Login(email){
-    usersList = await fetch("backend/users.json")
+    usersList = await fetch("backend/users.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })

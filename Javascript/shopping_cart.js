@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', e =>{
                 let aisle = url.get('aisle');
                 let product = url.get('product');
 
-                var json = fetch("backend/product_info.json")
+                var json = fetch("backend/product_info.json",{cache: "no-store"})
                     .then(response => {
                         return response.json();
                     })
@@ -302,7 +302,7 @@ async function addtocart(){
 
     var email = localStorage.getItem("LogInEmail");
 
-    json_cart = await fetch("backend/orders.json")
+    json_cart = await fetch("backend/orders.json",{cache: "no-store"})
         .then(response => {
         return response.json();
         })
@@ -367,7 +367,7 @@ async function displayCartProducts(){
     let html = "";
     var email = localStorage.getItem("LogInEmail");
 
-    json_cart = await fetch("backend/orders.json")
+    json_cart = await fetch("backend/orders.json",{cache: "no-store"})
         .then(response => {
         return response.json();
     })
@@ -423,7 +423,7 @@ async function update(aisle,product){
         return;
     }
 
-    json_cart = await fetch("backend/orders.json")
+    json_cart = await fetch("backend/orders.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })
@@ -472,7 +472,7 @@ function countCartItems(email){
 async function submit_order(){
     var email = localStorage.getItem("LogInEmail");
 
-    json_cart = await fetch("backend/orders.json")
+    json_cart = await fetch("backend/orders.json",{cache: "no-store"})
         .then(response => {
         return response.json();
     })
@@ -532,7 +532,7 @@ async function delete_from_cart(aisle,product){
     if(confirm("Are you sure you would like to remove this item from cart?")){
         var email = localStorage.getItem("LogInEmail");
 
-        json_cart = await fetch("backend/orders.json")
+        json_cart = await fetch("backend/orders.json",{cache: "no-store"})
         .then(response => {
         return response.json();
         })
@@ -568,7 +568,7 @@ async function delete_from_cart(aisle,product){
 }
 
 async function calculate_total(){
-    var json_products = await fetch("backend/product_info.json")
+    var json_products = await fetch("backend/product_info.json",{cache: "no-store"})
     .then(response => {
     return response.json();
     })

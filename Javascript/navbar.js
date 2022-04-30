@@ -50,7 +50,18 @@ async function check_user(){
         </button></a>`
         document.getElementById("shoppingCartSpan").innerHTML = shoppingCart;
 
-        document.getElementById("UserDisplay").innerHTML = `<i class="far fa-user" title="`+json_users[email].firstName+` `+json_users[email].lastName+`"></i>`
+        document.getElementById("UserDisplay").innerHTML = `<i class="far fa-user" title="`+json_users[email].firstName+` `+json_users[email].lastName+`" onclick="logout()"></i>`
+
+    }
+}
+
+    function logout(){
+        var email = localStorage.getItem("LogInEmail");
+
+        if(confirm("You are currently loged in as "+json_users[email].firstName+" "+json_users[email].lastName+". \nWould you like to logout?")){
+            localStorage.removeItem("LogInEmail");
+            location.href = "./index.html"
+        }
 
     }
 
@@ -68,5 +79,5 @@ async function check_user(){
         return count;
     }
 
-}
+
 
